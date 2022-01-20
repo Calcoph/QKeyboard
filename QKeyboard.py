@@ -1,3 +1,7 @@
+import sys
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QLabel, QApplication
+from PyQt5.QtCore import Qt, QSize
+
 class QKeyboard(QWidget):
     def __init__(self) -> None:
         super().__init__()
@@ -126,7 +130,7 @@ class QKeyboard(QWidget):
 
     def init_row(self, layout, labels):
         for item in labels:
-            if isinstance(item, Tuple):
+            if isinstance(item, tuple):
                 label, stretch_factor = item
             else:
                 label = item
@@ -134,3 +138,12 @@ class QKeyboard(QWidget):
             l_widget = QLabel(label)
             l_widget.setAlignment(Qt.AlignCenter)
             layout.addWidget(l_widget, stretch_factor)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+
+    keyboard = QKeyboard()
+    keyboard.setMinimumSize(QSize(750, 275))
+    keyboard.show()
+
+    sys.exit(app.exec())
