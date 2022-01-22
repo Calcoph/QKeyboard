@@ -1,16 +1,24 @@
-ESC       ##F1 ##F2 ##F3##F4##F5##F6##F7##F8##F9##F10##F11##F12   
-º         ##1  ##2  ##3 ##4 ##5 ##6 ##7 ##8 ##9 ##0  ##'  ##¡     ##<-
-TAB       ##Q  ##W  ##E ##R ##T ##Y ##U ##I ##O ##P  ##`  ##+     ##ENTER
+ESC        ##F1 ##F2 ##F3##F4##F5##F6##F7##F8##F9##F10##F11##F12   
+º          ##1  ##2  ##3 ##4 ##5 ##6 ##7 ##8 ##9 ##0  ##'  ##¡     ##<-
+TAB        ##Q  ##W  ##E ##R ##T ##Y ##U ##I ##O ##P  ##`  ##+     ##ENTER
 BLOQ\nMAYÚS##A  ##S  ##D ##F ##G ##H ##J ##K ##L ##Ñ  ##´  ##Ç     ##ENTER
-LMAYÚS    ##<  ##Z  ##X ##C ##V ##B ##N ##M ##, ##.  ##-  ##RMAYÚS
-LCONTROL   ##WIN##ALT##                          ##ALT GR##FN##MENU##RCONTROL
--
+LMAYÚS     ##<  ##Z  ##X ##C ##V ##B ##N ##M ##, ##.  ##-  ##RMAYÚS
+LCONTROL   ##WIN##ALT##                       ##ALT GR##FN##MENU##RCONTROL
+---#---
 IMPR\nPANT##BLOQ\nDESPL##PAUSA\nINTER
 INSERT    ##INICIO     ##RE\nPÁG
 SUPR      ##FIN        ##AV\nPÁG
--
--
--
+---#---
+ᐃ
+ᐊ##ᐁ##ᐅ
+---#---
+BLOQ\nNUM##/##*##-
+        7##8##9##+
+        4##5##6
+        1##2##3
+,
++##INTRO##0
+---#---
         <-: 2
        TAB: 1.5
 BLOQ\nMAYÚS: 1.75

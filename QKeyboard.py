@@ -96,6 +96,7 @@ class QKeyboard(QWidget):
 
     def init_numpad(self, labels):
         layout = QGridLayout()
+        specials = labels.pop()
         """labels = [
             [],
             [],
@@ -108,13 +109,13 @@ class QKeyboard(QWidget):
 
         self.init_grid(layout, labels)
 
-        l_widget = QLabel("+")
+        l_widget = QLabel(specials[0])
         l_widget.setAlignment(Qt.AlignCenter)
         layout.addWidget(l_widget, 3, 3, 2, 1)
-        l_widget = QLabel("intro")
+        l_widget = QLabel(specials[1])
         l_widget.setAlignment(Qt.AlignCenter)
         layout.addWidget(l_widget, 5, 3, 2, 1)
-        l_widget = QLabel("0")
+        l_widget = QLabel(specials[2])
         l_widget.setAlignment(Qt.AlignCenter)
         layout.addWidget(l_widget, 6, 0, 1, 2)
         
@@ -148,26 +149,27 @@ class QKeyboard(QWidget):
             [
                 ["ESC", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"],
                 ["º", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "'", "¡"],
-                ["tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "`", "+", "Enter"],
-                ["bloq\nmayús", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ñ", "´", "Ç", "Enter"],
-                ["mayús", "<", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "-", "mayús"],
-                ["ctrl", "win", "alt", "space", "alt gr", "FN", "menu", "ctrl"]
+                ["TAB", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "`", "+", "ENTER"],
+                ["BLOQ\nMAYÚS", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ñ", "´", "Ç", "ENTER"],
+                ["MAYÚS", "<", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "-", "MAYÚS"],
+                ["CONTROL", "WIN", "ALT", "ESPACIO", "ALT GR", "FN", "MENU", "CONTROL"]
             ],
             [
-                ["print", "block", "pause"],
-                ["insert", "inicio", "re\npág"],
-                ["supr", "fin", "av\npág"]
+                ["IMPR\nPANT", "BLOQ\nDESPL", "PAUSA\nINTER"],
+                ["INSERT", "INICIO", "RE\nPÁG"],
+                ["SUPR", "FIN", "AV\nPÁG"]
             ],
             [
-                ["up"],
-                ["left", "down", "right"]
+                ["ᐃ"],
+                ["ᐊ", "ᐁ", "ᐅ"]
             ],
             [
-                ["bloq\nnum", "/", "-", "*"],
+                ["BLOQ\nNUM", "/", "-", "*","-"],
                 ["7", "8", "9"],
                 ["4", "5", "6"],
                 ["1", "2", "3"],
-                [","]
+                [","],
+                ["+","INTRO","0"]
             ]
         ]
 
@@ -181,7 +183,7 @@ class QKeyboard(QWidget):
         parts = ([], [], [], []) # core, navigation (upside), arrows, numpad
         current = 0
         for line in file:
-            if line.strip() == "-":
+            if line.strip() != "---#---":
                 if current <= 3: # labels
                     parts[current].append([])
                     keys = line.split("##")
@@ -242,7 +244,8 @@ class QKeyboard(QWidget):
             parts[3][1],
             parts[3][2],
             parts[3][3],
-            row
+            row,
+            parts[3][5]
         ]
 
         parts = (parts[0], navigation, numpad)
