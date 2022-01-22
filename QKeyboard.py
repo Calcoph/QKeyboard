@@ -181,7 +181,7 @@ class QKeyboard(QWidget):
         parts = ([], [], [], []) # core, navigation (upside), arrows, numpad
         current = 0
         for line in file:
-            if len(line.strip()) > 0:
+            if line.strip() == "-":
                 if current <= 3: # labels
                     parts[current].append([])
                     keys = line.split("##")
